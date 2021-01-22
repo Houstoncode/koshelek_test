@@ -88,6 +88,8 @@ export default {
     },
   },
   mounted() {
+    this.fetchOrders()
+
     this.socket = new WebSocket(
       `wss://stream.binance.com:9443/ws/${this.currentSymbol.toLowerCase()}@depth`
     )
@@ -97,7 +99,6 @@ export default {
 
       const parseData = JSON.parse(data)
 
-      // eslint-disable-next-line no-unused-vars
       const { U, u, a, b } = parseData
       const id = this.orders.lastUpdateId
 
