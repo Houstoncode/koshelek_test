@@ -1,0 +1,70 @@
+.hr {
+  width: 100%;
+  border: none;
+  border-top: 1px double #333;
+  color: #333;
+  margin: 16px 0;
+}
+
+/*
+ * Perfect Scroll Bar Styles
+ */
+
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+  position: absolute;
+  bottom: 0;
+  height: 15px;
+}
+
+.ps__rail-y {
+  position: absolute;
+  right: 0;
+  display: none;
+  width: 6px;
+  opacity: 1;
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  display: block;
+  border-radius: 6px;
+}
+
+.ps__thumb-x {
+  position: absolute;
+  bottom: 2px;
+  height: 6px;
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color 0.2s linear, height 0.2s ease-in-out;
+}
+
+.ps__thumb-y {
+  position: absolute;
+  display: none;
+  width: 6px;
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color 0.2s linear, width 0.2s ease-in-out;
+}
+
+.ps {
+  position: relative;
+  overflow: hidden !important;
+  opacity: 1;
+  -ms-touch-action: auto;
+  touch-action: auto;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+
+  &:focus,
+  &:hover {
+    .ps__thumb-y,
+    .ps__rail-y {
+      display: block;
+    }
+  }
+}
